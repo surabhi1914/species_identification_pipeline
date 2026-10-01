@@ -1,0 +1,61 @@
+project:
+  name: species-identification-pipeline
+  seed: 42
+  device: cuda
+
+
+paths:
+
+  data:
+    raw: data/raw
+    interim: data/interim
+    processed: data/processed
+    annotations: data/annotations
+
+  results: results
+
+
+dataset:
+  name: who_eats_whom
+  processed_file: data/processed/chordata_dataset.parquet
+  taxonomic_scope: Chordata
+  quality_grade: research
+  licensed_only: true
+
+
+candidate_space:
+  taxonomic_scope: Chordata
+  species_file: data/processed/chordata_species.csv
+
+
+bioclip:
+  model_name: bioclip2
+  top_k: 5
+  batch_size: 32
+
+
+grounding_dino:
+  model_name: grounding_dino
+  box_threshold: 0.35
+  text_threshold: 0.25
+  top_k_boxes: 5
+
+
+llama:
+  model_name: llama3_8b_instruct
+  temperature: 0.0
+  max_tokens: 100
+
+
+evaluation:
+  classification:
+    top_k:
+      - 1
+      - 3
+      - 5
+  localization:
+    iou_threshold: 0.50
+  calibration:
+    enabled: true
+  abstention:
+    enabled: true
