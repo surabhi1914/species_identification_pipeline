@@ -5,3 +5,4 @@ math
 pyarrow
 matplotlib
 python-gazetteer
+reverse_geocode
