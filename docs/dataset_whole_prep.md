@@ -4,7 +4,7 @@
 ### Overview
  
 - **Total number of records:** 10,387
-- **Total number of columns (final dataset):** 27
+- **Total number of columns (final dataset):** 30
 - **Unique observations:** 10,387
 - **Total number of images:** 30,315
 ### 📷 Photo Statistics
@@ -197,7 +197,7 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 * Top 50% species (1,978 species): 23,148 images (77.80% of all images)
 
 ### Taxonomic composition by major class
-- Class
+- Class \
     ![alt text](assets/tax_class.png)
 
 ### Predator versus prey composition
@@ -609,4 +609,4 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 
 ## Output Files:
 
-    - 
+- [clean_obs.parquet](../data/interim/clean_obs.parquet)
