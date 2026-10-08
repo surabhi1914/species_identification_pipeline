@@ -90,18 +90,33 @@ These are creative licensed photos. So, I am proceeding with the analysis on the
 
 ### 🧹 Taxon Rank column Distribution
 
-| # | taxon_rank | Count |
-|---|------------|------:|
-| 1 | species    | 19400 |
-| 2 | subspecies | 3217 |
-| 3 | genus      | 262 |
-| 4 | hybrid     | 69 |
-| 5 | variety    | 53 |
-| 6 | complex    | 40 |
-| 7 | subgenus   | 33 |
-| 8 | tribe      | 25 |
-| 9 | subfamily  | 19 |
-| 10 | form      | 7 |
+- Photo
+
+    | # | taxon_rank | Count |
+    |---|------------|------:|
+    | 1 | species    | 19400 |
+    | 2 | subspecies | 3217 |
+    | 3 | genus      | 262 |
+    | 4 | hybrid     | 69 |
+    | 5 | variety    | 53 |
+    | 6 | complex    | 40 |
+    | 7 | subgenus   | 33 |
+    | 8 | tribe      | 25 |
+    | 9 | subfamily  | 19 |
+    | 10 | form      | 7 |
+- Observation
+    | taxon_rank | Count |
+    |------------|------:|
+    | species | 6702 |
+    | subspecies | 918 |
+    | genus | 100 |
+    | hybrid | 44 |
+    | variety | 24 |
+    | complex | 19 |
+    | subgenus | 10 |
+    | tribe | 7 |
+    | subfamily | 5 |
+    | form | 3 |
 
 **Count of records where taxon_rank is not equal to "species" -  3725**
 
@@ -493,22 +508,23 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 #### Is the dataset overwhelmingly North American or broadly global?
 | Region Group            | Observations | Images | Species | Countries | Observation Share (%) |
 |-------------------------|-------------:|-------:|--------:|----------:|----------------------:|
-| North America           | 4002 | 57452 | 1361 | 4   | 51.19 |
-| Outside North America   | 3816 | 76086 | 2458 | 114 | 48.81 |
+| North America           | 4002 | 11165 | 1361 | 4   | 51.19 |
+| Outside North America   | 3816 | 11874 | 2458 | 114 | 48.81 |
 
 **Key Findings**:
-- Observations are almost evenly split between the two regional groups, with **North America contributing 4,002 observations (51.19%)** and **Outside North America contributing 3,816 observations (48.81%)**.
-- Despite having slightly fewer observations, **Outside North America** accounts for substantially greater biodiversity, with **2,458 species**, compared to **1,361 species** in North America.
-- The dataset covers **114 countries outside North America**, compared to only **4 countries within North America**, indicating much broader geographic representation outside the region.
-- Outside North America contains **approximately 81% more species** than North America (2,458 vs. 1,361), despite having a similar number of observations.
-- The species-to-observation ratio is considerably higher outside North America, suggesting **greater taxonomic diversity per observation** and potentially a wider variety of habitats and ecosystems represented in the dataset.
-- **North America contributes a disproportionately large share of observations relative to its geographic coverage**, accounting for over half of all observations while representing only four countries.
-- Image coverage is substantially higher outside North America, with **76,086 images** compared to **57,452 images** from North America, indicating stronger photographic documentation outside the region.
-- Outside North America contributes **32.5% more images** than North America despite having fewer observations, suggesting more images captured per observation on average.
-- The near-equal observation share between the two groups indicates a balanced dataset in terms of observation volume, but the biodiversity metrics reveal a clear difference in species richness.
-- The combination of **higher species richness, broader country coverage, and greater image volume** suggests that observations outside North America are more geographically and taxonomically diverse.
-- Conversely, the North American dataset appears more concentrated, with a larger number of observations collected from a smaller set of countries and a comparatively smaller species pool.
-- These patterns may reflect differences in **sampling effort, observer distribution, biodiversity levels, and geographic coverage**, and should be interpreted as characteristics of the dataset rather than direct measures of regional biodiversity.
+
+- Observations are nearly evenly distributed between the two regional groups, with **North America contributing 4,002 observations (51.19%)** and **Outside North America contributing 3,816 observations (48.81%)**.
+- Although it has slightly fewer observations, **Outside North America contains substantially greater species diversity**, with **2,458 species** compared to **1,361 species** in North America.
+- The dataset spans **114 countries outside North America** but only **4 countries within North America**, indicating much broader geographic representation outside the region.
+- Outside North America contains approximately **81% more species** than North America (2,458 vs. 1,361), despite having a similar number of observations.
+- Species are represented more efficiently outside North America, with approximately **0.64 species per observation** compared to **0.34 species per observation** in North America, suggesting greater taxonomic diversity per observation.
+- **North America contributes over half of all observations while representing only four countries**, indicating a relatively concentrated sampling effort within the region.
+- Image coverage is slightly higher outside North America, with **11,874 images** compared to **11,165 images** in North America.
+- Outside North America contributes approximately **6.3% more images** than North America, despite having fewer observations, resulting in a higher average number of images per observation (**3.11 vs. 2.79**).
+- While observation volume is balanced between the two groups, biodiversity metrics reveal a clear contrast, with Outside North America exhibiting substantially greater species richness and geographic breadth.
+- The combination of **higher species richness, broader country coverage, and slightly greater image volume** suggests that observations outside North America capture a wider range of taxa and ecosystems.
+- Conversely, the North American portion of the dataset appears more concentrated, with a larger share of observations drawn from a relatively small number of countries and a more limited species pool.
+- These patterns likely reflect differences in **sampling effort, observer distribution, habitat diversity, and geographic coverage**, and should be interpreted as characteristics of the dataset rather than direct measures of regional biodiversity.
 
 
 ### Long-tail and imbalance questions
@@ -520,19 +536,21 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 
 #### What is the Gini coefficient or another concentration statistic for species frequency?
 - Gini coefficient, observations per species: **0.514**
-- Gini coefficient, images per species: **0.767**
+- Gini coefficient, images per species: **0.603**
 
 **Interpretation**:
+
 - The **Gini coefficient for observations per species is 0.514**, indicating a **moderate level of concentration** in observation records across species.
-- A Gini value above 0.5 suggests that observations are not evenly distributed: a relatively small subset of species accounts for a disproportionately large share of all recorded observations.
-- The **Gini coefficient for images per species is 0.767**, indicating a **high degree of inequality** in image representation across species.
-- The much higher Gini value for images than for observations (**0.767 vs. 0.514**) shows that photographic coverage is substantially more uneven than observation coverage.
-- While many species are observed at least occasionally, image documentation is concentrated in a relatively small number of species that receive most of the photographic attention.
-- The difference between the two metrics (**0.253 Gini points**) suggests that observer behavior, species visibility, attractiveness, accessibility, or ease of photography may strongly influence image collection.
-- Species with abundant images are likely driving dataset visibility and model-training potential, while many species remain underrepresented in image data despite having recorded observations.
-- The observation distribution can be characterized as **moderately skewed**, whereas the image distribution is **strongly skewed**, reflecting a pronounced long-tail pattern in photographic records.
-- These findings indicate that biodiversity coverage is broader than image coverage: species occurrence data are relatively more balanced, but visual documentation is concentrated among a smaller subset of species.
-- For applications such as species identification, computer vision, or image-based ecological analyses, the high image Gini coefficient highlights a potential risk of **representation bias toward well-photographed species**.
+- A Gini value slightly above 0.5 suggests that observations are not evenly distributed across species; some species are recorded much more frequently than others, although the imbalance is not extreme.
+- The **Gini coefficient for images per species is 0.603**, indicating a **moderately high level of concentration** in image representation across species.
+- The higher Gini value for images than for observations (**0.603 vs. 0.514**) indicates that photographic documentation is more unevenly distributed than observation records.
+- While observation data are already somewhat concentrated among a subset of species, image data are even more concentrated, with relatively fewer species accounting for a disproportionately large share of all images.
+- The difference between the two metrics (**0.089 Gini points**) suggests that factors such as species visibility, observer preferences, accessibility, ease of photography, and species charisma may influence image collection beyond simple observation frequency.
+- Species with extensive image coverage are likely to be more visually documented and better represented in image-based analyses, while many species have comparatively limited photographic records.
+- Both distributions exhibit a clear long-tail pattern, but the image distribution is noticeably more unequal than the observation distribution.
+- The results indicate that **species occurrence data are more evenly distributed than image data**, suggesting that biodiversity representation in the dataset is broader than the corresponding visual documentation.
+- For applications such as species identification, computer vision, and image-based ecological modeling, the higher image Gini coefficient highlights a potential **representation bias toward well-photographed species**, although the imbalance remains moderate rather than extreme.
+- Overall, the dataset shows **moderate concentration in species observations and moderately high concentration in species images**, indicating that a subset of species receives disproportionately greater attention, particularly in photographic records.
 
 >The dataset exhibits a classic biodiversity data pattern where a minority of species accumulate a majority of records, with this effect being substantially stronger for images than for observations.nately focused on a subset of highly visible, common, or observer-favored species.
 
@@ -540,58 +558,57 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 
 | Level             | Unit Count | Median per Species | Mean per Species | Gini by Species |
 |-------------------|-----------:|-------------------:|-----------------:|----------------:|
-| Image-level       | 132,710 | 9.0 | 44.35 | 0.767 |
-| Observation-level | 7,647   | 1.0 | 2.56  | 0.514 |
-| Species-level     | 2,992   | 1.0 | 1.00  | 0.000 |
+| Image-level       | 22,677 | 4.00 | 7.58 | 0.603 |
+| Observation-level | 7,647  | 1.00 | 2.56 | 0.514 |
+| Species-level     | 2,992  | 1.00 | 1.00 | 0.000 |
 
 
 **Interpretation**:
-- The table evaluates dataset balance across three levels: images, observations, and species.
-- **Species Level**
-    - The dataset contains **2,992 species**.
-    - Because each species is counted exactly once at this level, the mean and median are both **1**, producing a **Gini coefficient of 0**.
-    - This represents a perfectly balanced distribution and serves as a baseline for comparison.
-- **Observation Level**
-    - The dataset includes **7,647 observations** across 2,992 species.
-    - The median species has only **1 observation**, while the average species has **2.56 observations**.
-    - The difference between the median and mean indicates that a relatively small number of species accumulate many observations, while most species are represented by very few records.
-    - The **Gini coefficient of 0.514** confirms moderate inequality in observation coverage.
-- **Image Level**
-    - The dataset contains **132,710 images**.
-    - The median species is represented by only **9 images**, yet the average species has **44.35 images**.
-    - This large gap between the median and mean reveals a highly skewed distribution driven by a small number of heavily photographed species.
-    - The **Gini coefficient of 0.767** indicates strong concentration and significant imbalance in image representation across species.
-- **Overall Pattern**
-    - Inequality increases substantially when moving from species counts to observations and then to images.
-    - Species occurrence records are moderately concentrated, but image data are highly concentrated.
-    - This suggests that while many species have been observed, only a subset receives extensive photographic documentation.
 
-**Key takeaways**
-- Most species are represented by very few observations, with **50% of species having only one observation**.
-- Image coverage is substantially more uneven than observation coverage (**Gini = 0.608 vs. 0.521**).
-- The dataset exhibits a strong **long-tail distribution**, where many species are rare and a small number of species are highly sampled.
+- The dataset contains **2,992 unique species**, represented by **7,647 observations** and **22,677 images**.
+- At the **observation level**, the median number of observations per species is **1**, while the mean is **2.56**. This indicates that at least half of all species are represented by only a single observation, while a smaller number of species are observed much more frequently.
+- The **observation-level Gini coefficient (0.514)** indicates a moderate degree of concentration in observation records. Observations are unevenly distributed across species, but the imbalance is not extreme.
+- At the **image level**, species have a median of **4 images** and a mean of **7.58 images** per species. The substantial gap between the median and mean suggests a right-skewed distribution in which some species have very large image collections.
+- The **image-level Gini coefficient (0.603)** indicates moderately high inequality in photographic representation. Images are more concentrated among a subset of species than observation records are.
+- Comparing the two Gini coefficients (**0.603 for images vs. 0.514 for observations**) shows that photographic documentation is more unevenly distributed than observation coverage.
+- The difference between mean and median values at both levels demonstrates the presence of a long-tail distribution: many species have limited representation, while a relatively small number of species dominate the dataset.
+- At the **species level**, every species contributes exactly one count, resulting in a mean and median of **1.0** and a **Gini coefficient of 0.0**, representing perfect equality by definition.
+- These results suggest that although the dataset achieves broad species coverage, the depth of documentation varies considerably across taxa, especially for image data.
+
+**Key Takeaways**:
+
+- The dataset covers **2,992 species**, providing broad taxonomic representation.
+- Species-level diversity is high, but representation across observations and images is uneven.
+- Observation records exhibit **moderate concentration** (Gini = **0.514**), indicating that some species are observed much more frequently than others.
+- Image records exhibit **greater concentration** (Gini = **0.603**), meaning photographic documentation is disproportionately focused on a smaller subset of species.
+- The median species has only **1 observation**, highlighting that many species are sparsely documented.
+- The median species has **4 images**, but the average rises to **7.58**, indicating that a relatively small group of species accounts for a large share of available images.
+- The higher inequality in images compared with observations suggests that factors such as species visibility, observer preference, accessibility, and ease of photography influence image collection.
+- The dataset follows a classic **long-tail biodiversity distribution**, where many species have limited records and a few species dominate the available observations and images.
+- For ecological analyses, the dataset provides strong breadth of species coverage, but representation bias should be considered when comparing species frequencies.
+- For computer vision, species identification, and machine-learning applications, the concentration of images among a subset of taxa may lead to better model performance for well-documented species and weaker performance for underrepresented species.
 
 #### Top species share at image and observation level
 
 | Metric                         | Percent (%) |
 |--------------------------------|------------:|
-| Top 1 species observation share | 1.90 |
-| Top 1 species image share       | 0.70 |
+| Top 1 species observation share | 1.9 |
+| Top 1 species image share       | 1.33 |
 | Top 5 species observation share | 6.92 |
-| Top 5 species image share       | 6.96 |
+| Top 5 species image share       | 6.91 |
 | Top 10 species observation share| 10.59 |
-| Top 10 species image share      | 9.55 |
+| Top 10 species image share      | 9.8 |
 
 **Interpretation**:
 - This analysis measures how much of the dataset is concentrated among the most frequently represented species.
 - **Top Species Contributions**
     - The single most-observed species accounts for only **1.90% of all observations**, indicating that no individual species overwhelmingly dominates the observation dataset.
-    - The most-photographed species contributes **0.70% of all images**, suggesting image records are distributed across many species despite the overall image imbalance observed in the Gini analysis.
+    - The most-photographed species contributes **1.33% of all images**, suggesting image records are distributed across many species despite the overall image imbalance observed in the Gini analysis.
 - **Top 5 Species**
-    - The top 5 species account for **6.92% of all observations** and **6.96% of all images**.
+    - The top 5 species account for **6.92% of all observations** and **6.9`% of all images**.
     - This near-identical share indicates that the most prominent species receive similar levels of attention in both observation and image datasets.
 - **Top 10 Species**
-    - The top 10 species account for **10.59% of observations** and **9.55% of images**.
+    - The top 10 species account for **10.59% of observations** and **9.8% of images**.
     - Roughly one-tenth of all records are concentrated among only 10 species, showing noticeable but not extreme dominance.
 - **Relationship to Dataset Balance**
     - Although previous Gini statistics showed substantial inequality, especially for images, the relatively modest top-1 and top-10 shares indicate that dataset imbalance is not caused by a handful of extremely dominant species.
@@ -599,12 +616,12 @@ These are creative licensed observations. So, I am proceeding with the analysis 
 
 
 **Key takeaways**
-- No single species dominates the dataset; the most observed species represents only **1.90% of observations** and the most photographed species only **0.70% of images**.
+- No single species dominates the dataset; the most observed species represents only **1.90% of observations** and the most photographed species only **1.33% of images**.
 - The **top 5 species contribute approximately 7%** of both observations and images, indicating moderate concentration among the most common taxa.
 - The **top 10 species account for around 10% of all observations and images**, meaning nearly 90% of records are distributed among thousands of other species.
-- Observation concentration is slightly higher than image concentration among the top 10 species (**10.59% vs. 9.55%**).
+- Observation concentration is slightly higher than image concentration among the top 10 species (**10.59% vs. 9.8%**).
 - The similarity between top-5 observation and image shares suggests that highly observed species are generally also highly photographed.
-- Combined with the previously calculated **Gini coefficients** (0.514 for observations and 0.767 for images), these results show that dataset imbalance is driven by a large number of moderately overrepresented species rather than a few overwhelmingly dominant species.
+- Combined with the previously calculated **Gini coefficients** (0.514 for observations and 0.603 for images), these results show that dataset imbalance is driven by a large number of moderately overrepresented species rather than a few overwhelmingly dominant species.
 - The dataset exhibits a **long-tail biodiversity pattern**: a small number of common species account for a disproportionate share of records, while most species remain relatively sparsely represented.
 - From a biodiversity and machine-learning perspective, the dataset is not suffering from extreme dominance by a few species, but it still contains meaningful representation imbalance that may affect species-level analyses and model performance.
 - Overall, the top-species concentration metrics suggest **moderate dominance but strong diversity**, with thousands of species contributing the majority of observations and images.
